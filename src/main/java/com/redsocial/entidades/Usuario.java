@@ -19,7 +19,10 @@ public class Usuario {
     
     private String contraseña;
     private boolean diseñador;
+    private boolean darBaja;
+    
     
     public Usuario(){
     }
+    
 }
