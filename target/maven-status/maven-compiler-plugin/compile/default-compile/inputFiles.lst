@@ -1,5 +1,12 @@
-<<<<<<< HEAD
-C:\Users\nacho\OneDrive\Documentos\NetBeansProjects\Proyecto-final-Equipo-2.26-2\src\main\java\com\redsocial\RedsocialApplication.java
-=======
+C:\devep\proyectoEgg\Proyecto-final-Equipo-2.26-2\src\main\java\com\redsocial\entidades\Comentario.java
+C:\devep\proyectoEgg\Proyecto-final-Equipo-2.26-2\src\main\java\com\redsocial\entidades\Rol.java
+C:\devep\proyectoEgg\Proyecto-final-Equipo-2.26-2\src\main\java\com\redsocial\entidades\Usuario.java
 C:\devep\proyectoEgg\Proyecto-final-Equipo-2.26-2\src\main\java\com\redsocial\RedsocialApplication.java
->>>>>>> 56e9f18b351ff556608a6cffb7e7b9ce8f9fd695
+C:\devep\proyectoEgg\Proyecto-final-Equipo-2.26-2\src\main\java\com\redsocial\Repository\UsuarioRepositorio.java
+C:\devep\proyectoEgg\Proyecto-final-Equipo-2.26-2\src\main\java\com\redsocial\enumercion\TipoRol.java
+C:\devep\proyectoEgg\Proyecto-final-Equipo-2.26-2\src\main\java\com\redsocial\Repository\RolRepositorio.java
+C:\devep\proyectoEgg\Proyecto-final-Equipo-2.26-2\src\main\java\com\redsocial\entidades\Publicacion.java
+C:\devep\proyectoEgg\Proyecto-final-Equipo-2.26-2\src\main\java\com\redsocial\Repository\ComentarioRepositorio.java
+C:\devep\proyectoEgg\Proyecto-final-Equipo-2.26-2\src\main\java\com\redsocial\Servicio\UsuarioServicio.java
+C:\devep\proyectoEgg\Proyecto-final-Equipo-2.26-2\src\main\java\com\redsocial\Controller\UsuarioController.java
+C:\devep\proyectoEgg\Proyecto-final-Equipo-2.26-2\src\main\java\com\redsocial\Repository\PublicacionRepositorio.java
