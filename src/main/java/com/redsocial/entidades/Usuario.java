@@ -22,7 +22,7 @@ public class Usuario {
     @GeneratedValue(generator="uuid")
     @GenericGenerator(name="uuid",strategy="uuid2" )
     private String id;
-    
+        
     
     private String nombre;
     private String contrasena;
@@ -37,15 +37,6 @@ public class Usuario {
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Publicacion> publicaciones = new ArrayList<>();
 
-    public void setRol(Rol rol) {
-        this.rol = rol;
-    }
-
-    public Rol getRol() {
-        return rol;
-    }
-    
-   
     public Usuario(){
     }
     

@@ -2,6 +2,7 @@
 package com.redsocial.Controller;
 
 
+
 import com.redsocial.Servicio.UsuarioServicio;
 import com.redsocial.entidades.Usuario;
 import java.util.Set;
@@ -21,23 +22,26 @@ public class UsuarioController {
     
      @Autowired
     private UsuarioServicio usuarioServicio;
+     
 
     @GetMapping("/formulario")
     public String mostrarFormulario(Model model) {
         model.addAttribute("nuevoUsuario", new Usuario());
+       
+        
         return "Formulario";
     }
 
     @PostMapping("/crear")
     public String crearUsuario(@ModelAttribute("nuevoUsuario") Usuario nuevoUsuario,
-                               @RequestParam("tipoRol") String tipoRol) {
+                               @RequestParam("rol") String tipoRol) {
         usuarioServicio.crearUsuario(
                 nuevoUsuario.getNombre(),
                 nuevoUsuario.getContrasena(),
                 nuevoUsuario.getCorreo(),
                 tipoRol
         );
-        return "redirect:/usuarios/listar";
+        return "redirect:/usuarios/Formulario";
     }
 
     @GetMapping("/listar")
