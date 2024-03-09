@@ -1,6 +1,4 @@
-/*
-Juan Ignacio: Checkeo Entidad Usuario con boolean de diseñador por simplicidad
- */
+
 package com.redsocial.entidades;
 
 import jakarta.persistence.CascadeType;
@@ -15,38 +13,27 @@ import java.util.List;
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
+
+
 @Data
 @Entity
-public class Usuario {
+public class Publicacion {
+    
     @Id
     @GeneratedValue(generator="uuid")
     @GenericGenerator(name="uuid",strategy="uuid2" )
     private String id;
     
-    
     private String nombre;
-    private String contrasena;
-    private String correo;
-    
-    private boolean darBaja;
-    
+    private String descripcion;
+    private String imagen;
+    private int cantidadMeGusta;
+
     @ManyToOne
-    @JoinColumn(name="tipo_rol_id")
-    private Rol rol;
-    
-    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Publicacion> publicaciones = new ArrayList<>();
+    @JoinColumn(name = "usuario_id")
+    private Usuario usuario;
 
-    public void setRol(Rol rol) {
-        this.rol = rol;
-    }
+    @OneToMany(mappedBy = "publicacion", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Comentario> comentarios = new ArrayList<>();
 
-    public Rol getRol() {
-        return rol;
-    }
-    
-   
-    public Usuario(){
-    }
-    
 }
