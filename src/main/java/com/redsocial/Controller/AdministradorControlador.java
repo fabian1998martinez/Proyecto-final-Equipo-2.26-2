@@ -13,5 +13,8 @@ public class AdministradorControlador {
     public String index(){
        return null;   
     }
-    
+    @GetMapping("/registrar")
+    public String showForm(){
+        return "lo";        
+        }
 }
