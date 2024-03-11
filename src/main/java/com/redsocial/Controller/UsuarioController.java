@@ -41,7 +41,7 @@ public class UsuarioController {
                 nuevoUsuario.getCorreo(),
                 tipoRol
         );
-        return "redirect:/usuarios/Formulario";
+        return "redirect:/login";
     }
 
     @GetMapping("/listar")
