@@ -3,6 +3,9 @@ C:\devep\proyectoEgg\Proyecto-final-Equipo-2.26-2\src\main\java\com\redsocial\en
 C:\devep\proyectoEgg\Proyecto-final-Equipo-2.26-2\src\main\java\com\redsocial\RedsocialApplication.java
 C:\devep\proyectoEgg\Proyecto-final-Equipo-2.26-2\src\main\java\com\redsocial\Repository\UsuarioRepositorio.java
 C:\devep\proyectoEgg\Proyecto-final-Equipo-2.26-2\src\main\java\com\redsocial\Repository\RolRepositorio.java
+C:\devep\proyectoEgg\Proyecto-final-Equipo-2.26-2\src\main\java\com\redsocial\Servicio\RolServicio.java
+C:\devep\proyectoEgg\Proyecto-final-Equipo-2.26-2\src\main\java\com\redsocial\Servicio\PublicacionServicio.java
+C:\devep\proyectoEgg\Proyecto-final-Equipo-2.26-2\src\main\java\com\redsocial\Controller\PublicacionController.java
 C:\devep\proyectoEgg\Proyecto-final-Equipo-2.26-2\src\main\java\com\redsocial\Repository\ComentarioRepositorio.java
 C:\devep\proyectoEgg\Proyecto-final-Equipo-2.26-2\src\main\java\com\redsocial\Controller\UsuarioController.java
 C:\devep\proyectoEgg\Proyecto-final-Equipo-2.26-2\src\main\java\com\redsocial\Repository\PublicacionRepositorio.java
@@ -10,5 +13,4 @@ C:\devep\proyectoEgg\Proyecto-final-Equipo-2.26-2\src\main\java\com\redsocial\en
 C:\devep\proyectoEgg\Proyecto-final-Equipo-2.26-2\src\main\java\com\redsocial\enumercion\TipoRol.java
 C:\devep\proyectoEgg\Proyecto-final-Equipo-2.26-2\src\main\java\com\redsocial\Controller\AdministradorControlador.java
 C:\devep\proyectoEgg\Proyecto-final-Equipo-2.26-2\src\main\java\com\redsocial\entidades\Publicacion.java
-C:\devep\proyectoEgg\Proyecto-final-Equipo-2.26-2\src\main\java\com\redsocial\RolServicio\RolServicio.java
 C:\devep\proyectoEgg\Proyecto-final-Equipo-2.26-2\src\main\java\com\redsocial\Servicio\UsuarioServicio.java

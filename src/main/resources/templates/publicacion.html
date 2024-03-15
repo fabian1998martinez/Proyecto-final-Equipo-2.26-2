@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel ="stylesheet"  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    
+    <!--=============== REMIXICONS ===============-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
+    
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="\css\style.css"> 
+    <title>Publicaciones</title>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Publicaciones</h1>
+        <div th:if="${hasRole('ROLE_DESIGNER')}">
+            <a href="/publicaciones/nueva" class="btn btn-primary">Nueva Publicación</a>
+        </div>
+        
+        <div th:each="publicacion : ${publicaciones}">
+            <div class="card">
+                <img th:src="${publicacion.imagen}" class="card-img-top" alt="Imagen de la publicación">
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${publicacion.nombre}"></h5>
+                    <p class="card-text" th:text="${publicacion.descripcion}"></p>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-primary">Me gusta</button>
+                    <!-- Formulario para agregar un comentario -->
+                    <form th:if="${not #authorization.expression('hasRole(''ROLE_DESIGNER'')')}" action="/publicaciones/${publicacion.id}/comentarios" method="post">
+                        <div class="mb-3">
+                            <input type="text" name="texto" class="form-control" placeholder="Escribe tu comentario">
+                        </div>
+                        <button type="submit" class="btn btn-success">Comentar</button>
+                    </form>
+                    <a th:href="'/publicaciones/' + ${publicacion.id} + '/comentarios'" class="btn btn-secondary">Ver Comentarios</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
