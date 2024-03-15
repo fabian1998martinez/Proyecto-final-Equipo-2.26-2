@@ -42,3 +42,35 @@ loginBtn.addEventListener('click', () =>{
 loginClose.addEventListener('click', () =>{
    login.classList.remove('show-login')
 })
+
+/*=============== VENTANA MODAL (EXITO) ===============*/
+const btnAbrirPopup = document.getElementById('btn-abrir-popup'),
+    overlay = document.getElementById('overlay'),
+    popup = document.getElementById('popup'),
+    btnCerrarPopup = document.getElementById('btn-cerrar-popup');
+
+    btnAbrirPopup.addEventListener('click', () =>{
+      overlay.classList.add('active');
+      popup.classList.add('active');
+   });
+   
+   btnCerrarPopup.addEventListener('click', () =>{
+      overlay.classList.remove('active');
+      popup.classList.remove('active');
+   });
+
+   /*=============== VENTANA MODAL (ERROR) ===============*/
+const btnAbrirPopupError = document.getElementById('btn-abrir-popup-error'),
+overlayError = document.getElementById('overlay-error'),
+popupError = document.getElementById('popup-error'),
+btnCerrarPopupError = document.getElementById('btn-cerrar-popup-error');
+
+btnAbrirPopupError.addEventListener('click', () =>{
+  overlayError.classList.add('active');
+  popupError.classList.add('active');
+});
+
+btnCerrarPopupError.addEventListener('click', () =>{
+  overlayError.classList.remove('active');
+  popupError.classList.remove('active');
+});
