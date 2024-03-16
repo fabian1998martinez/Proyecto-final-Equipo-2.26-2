@@ -6,6 +6,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import java.util.ArrayList;
@@ -26,7 +27,9 @@ public class Publicacion {
     
     private String nombre;
     private String descripcion;
-    private String imagen;
+    @Lob
+    private byte[] imagen; 
+    
     private int cantidadMeGusta;
 
     @ManyToOne

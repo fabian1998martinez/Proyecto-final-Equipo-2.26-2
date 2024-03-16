@@ -15,9 +15,7 @@
  <title>Login</title>
    </head>
 <body>
-      <form action="#"  th:action="@{/login}" th:object="${user}" method="post" class="login__form">
-         <h2 class="text-center fw-bold fs-2 text-primary">LOGIN</h2>
-      <form action="#"  th:action="@{/login}" th:object="${nuevoUsuario}" method="post" class="login__form">
+      <form action="#"  th:action="@{/usuarios/login}" th:object="${nuevoUsuario}" method="post" class="login__form">
          <h2 class="login__title">Logear</h2>
          
          <div class="login__group">
@@ -28,7 +26,7 @@
                
             <div>
                <label for="password" class="login__label">Password</label>
-               <input type="password" placeholder="Ingresa tu contraseña" id="password" class="login__input">
+               <input type="password" placeholder="Ingresa tu contraseña" id="password" name="contrasena" class="login__input">
             </div>
          </div>
 

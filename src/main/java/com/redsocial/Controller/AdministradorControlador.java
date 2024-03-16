@@ -20,6 +20,8 @@ public class AdministradorControlador {
         model.addAttribute("nuevoUsuario", new Usuario());
         return "login";        
         }
+    
+    
     @GetMapping("/buscador")
     public String buscardor(){
     

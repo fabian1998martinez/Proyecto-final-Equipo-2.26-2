@@ -44,6 +44,17 @@ public class UsuarioController {
         return "redirect:/login";
     }
 
+    @PostMapping("/login")
+    public String login(@RequestParam String correo, @RequestParam String contrasena, Model model) {
+ 
+        Usuario usuario = usuarioServicio.findByEmail(correo);
+        if (usuario != null && usuario.getContrasena().equals(contrasena)) {
+            return "redirect:/";
+        } else {
+            model.addAttribute("error", "Credenciales incorrectas");
+            return "login";
+        }
+    }
     @GetMapping("/listar")
     public String listarUsuarios(Model model) {
         Set<Usuario> usuarios = usuarioServicio.listarUsuarios();

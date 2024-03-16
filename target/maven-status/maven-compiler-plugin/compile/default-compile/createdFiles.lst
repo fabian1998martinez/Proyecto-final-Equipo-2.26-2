@@ -1,1 +1,16 @@
+com\redsocial\Repository\UsuarioRepositorio.class
+com\redsocial\Controller\UsuarioController.class
 com\redsocial\RedsocialApplication.class
+com\redsocial\Controller\AdministradorControlador.class
+com\redsocial\entidades\Usuario.class
+com\redsocial\entidades\Comentario.class
+com\redsocial\Servicio\UsuarioServicio.class
+com\redsocial\enumercion\TipoRol.class
+com\redsocial\Repository\RolRepositorio.class
+com\redsocial\Repository\ComentarioRepositorio.class
+com\redsocial\Controller\PublicacionController.class
+com\redsocial\entidades\Publicacion.class
+com\redsocial\Servicio\PublicacionServicio.class
+com\redsocial\Repository\PublicacionRepositorio.class
+com\redsocial\Servicio\RolServicio.class
+com\redsocial\entidades\Rol.class

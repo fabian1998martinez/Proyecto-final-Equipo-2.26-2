@@ -338,6 +338,58 @@ img {
   transform: translateY(0);
 }
 
+/*=============== VENTANA MODAL ===============*/
+
+.overlay {
+  background:hsla(230, 75%, 15%, .5);
+  position: fixed;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+}
+
+.overlay.active {
+  visibility: visible;
+}
+
+.popup {
+background: var(--body-color );
+box-shadow: 0 8px 32px hsla(230, 75%, 15%, .5);
+color: hsla(144, 100%, 28%, 1);
+border-radius: .5rem;
+padding: 2rem;
+font-family: var(--body-font);
+text-align: center;
+width: 50%;
+}
+.popup p {
+  color: var(--text-color);
+}
+
+.popup .btn-cerrar-popup {
+  font-size: var(--font-regular);
+  padding: 0 1.5rem;
+  border: solid thin #241ba0;
+  height: 2rem;
+  line-height: 2rem;
+  border-radius: .3rem;
+  cursor: pointer;
+}
+
+.popup .btn-cerrar-popup:hover {
+  background: #241ba0;
+  color: var(--body-color);
+
+}
+
+ #popup-error h3{
+  color: hsla(0, 100%, 50%, 1);
+}
 /*=============== BREAKPOINTS ===============*/
 /* For medium devices */
 @media screen and (min-width: 576px) {
