@@ -17,8 +17,8 @@
     
     <div class="container">
         <h1>Publicaciones</h1>
-        <div th:if="${hasRole('ROLE_DESIGNER')}">
-            <a href="/publicaciones/nueva" class="btn btn-primary">Nueva Publicación</a>
+        <div >
+            <a href="/Publicaciones/formularioDePublicacion" class="btn btn-primary">Nueva Publicación</a>
         </div>
         
         <div th:each="publicacion : ${publicaciones}">
@@ -31,7 +31,7 @@
                 <div class="card-footer">
                     <button class="btn btn-primary">Me gusta</button>
                     <!-- Formulario para agregar un comentario -->
-                    <form th:if="${not #authorization.expression('hasRole(''ROLE_DESIGNER'')')}" action="/publicaciones/${publicacion.id}/comentarios" method="post">
+                    <form  action="/publicaciones/${publicacion.id}/comentarios" method="post">
                         <div class="mb-3">
                             <input type="text" name="texto" class="form-control" placeholder="Escribe tu comentario">
                         </div>

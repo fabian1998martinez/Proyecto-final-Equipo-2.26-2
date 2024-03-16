@@ -6,7 +6,6 @@ import com.redsocial.entidades.Usuario;
 import com.redsocial.Servicio.PublicacionServicio;
 import java.io.IOException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -57,7 +56,7 @@ public class PublicacionController {
 
 
    @PostMapping("/publicaciones/{id}/comentarios")
-    public String agregarComentario(@PathVariable("id") String id, String texto, @AuthenticationPrincipal Usuario usuario) {
+    public String agregarComentario(@PathVariable("id") String id, String texto,  Usuario usuario) {
     Publicacion publicacion = publicacionService.buscarPublicacionPorId(id);
     Comentario comentario = new Comentario();
     comentario.setTexto(texto);
