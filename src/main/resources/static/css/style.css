@@ -390,6 +390,37 @@ width: 50%;
  #popup-error h3{
   color: hsla(0, 100%, 50%, 1);
 }
+
+/*=============== SUBMENU ===============*/
+#open-sub-menu {
+  display:none;
+  }
+  
+  .sub-menu-warp{
+    position: absolute;
+    top:100%;
+    right:10%;
+    width: 15rem;
+    transition: max-height 0,5s;
+    visibility: hidden;
+  }
+  
+  .sub-menu {
+  background: var(--body-color );
+  box-shadow: 0 8px 32px hsla(230, 75%, 15%, .1);
+  padding: 1rem;
+  margin: .5rem;
+  
+  }
+  
+  #open-sub-menu:checked + .sub-menu-warp{
+   visibility: visible;
+  }
+  .user-info {
+    align-items: center;
+    padding: .5rem;
+  }
+  
 /*=============== BREAKPOINTS ===============*/
 /* For medium devices */
 @media screen and (min-width: 576px) {
