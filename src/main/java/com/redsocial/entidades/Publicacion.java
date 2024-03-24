@@ -28,7 +28,7 @@ public class Publicacion {
     private String nombre;
     private String descripcion;
     @Lob
-    private byte[] imagen; 
+    private String imagen; 
     
     private int cantidadMeGusta;
 

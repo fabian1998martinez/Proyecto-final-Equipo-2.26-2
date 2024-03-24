@@ -1,5 +1,5 @@
 
-package com.redsocial.Repository;
+package com.redsocial.repositorio;
 
 import com.redsocial.entidades.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;

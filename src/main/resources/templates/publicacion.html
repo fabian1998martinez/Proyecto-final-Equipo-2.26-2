@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
     
     <!--=============== CSS ===============-->
-    <link rel="stylesheet" href="\css\style.css"> 
+    <link rel="stylesheet" href="css\style.css"> 
     <title>Publicaciones</title>
 </head>
 <body>
@@ -18,29 +18,26 @@
     <div class="container">
         <h1>Publicaciones</h1>
         <div >
-            <a href="/Publicaciones/formularioDePublicacion" class="btn btn-primary">Nueva Publicación</a>
+            <a href="/Publicaciones/formularioDePublicacion" class="btn btn-primary" >Nueva Publicación</a>
         </div>
-        
-        <div th:each="publicacion : ${publicaciones}">
-            <div class="card">
-                <img th:src="${publicacion.imagen}" class="card-img-top" alt="Imagen de la publicación">
-                <div class="card-body">
-                    <h5 class="card-title" th:text="${publicacion.nombre}"></h5>
-                    <p class="card-text" th:text="${publicacion.descripcion}"></p>
-                </div>
-                <div class="card-footer">
-                    <button class="btn btn-primary">Me gusta</button>
-                    <!-- Formulario para agregar un comentario -->
-                    <form  action="/publicaciones/${publicacion.id}/comentarios" method="post">
-                        <div class="mb-3">
-                            <input type="text" name="texto" class="form-control" placeholder="Escribe tu comentario">
-                        </div>
-                        <button type="submit" class="btn btn-success">Comentar</button>
-                    </form>
-                    <a th:href="'/publicaciones/' + ${publicacion.id} + '/comentarios'" class="btn btn-secondary">Ver Comentarios</a>
+        <section class="container mt-5"> 
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div th:each="publicacion : ${publicaciones}" class="col" style="margin-bottom: 15px;">
+                <div class="card h-100">
+                    <img th:src="@{'/img/'+ ${publicacion.imagen}}" class="card-img-top" style="max-width: 200px; max-height: 200px; object-fit: cover;" alt="Imagen de la publicación">
+                    <div class="card-body">
+                        <h5 class="card-title" th:text="${publicacion.nombre}"></h5>
+                        <p class="card-text" th:text="${publicacion.descripcion}"></p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary true" tabindex="-1" role="button" aria-disabled="true">Comentar</a>
+                        <a href="#" class="btn btn-secondary true" tabindex="-1" role="button" aria-disabled="true">Me gusta</a>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
+
     </div>
 
 </body>

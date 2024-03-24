@@ -1,7 +1,7 @@
 
-package com.redsocial.Servicio;
+package com.redsocial.service;
 
-import com.redsocial.Repository.PublicacionRepositorio;
+import com.redsocial.repositorio.PublicacionRepositorio;
 import com.redsocial.entidades.Comentario;
 import com.redsocial.entidades.Publicacion;
 import com.redsocial.entidades.Usuario;
@@ -10,13 +10,13 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class PublicacionServicio {
+public class PublicacionService {
     
     @Autowired
     private PublicacionRepositorio publicacionRepositorio;
     
    
-    public Publicacion guardarPublicacion(Publicacion publicacion) {
+    public Publicacion guardarPublicacion(Publicacion publicacion){
         return publicacionRepositorio.save(publicacion);
     }
     

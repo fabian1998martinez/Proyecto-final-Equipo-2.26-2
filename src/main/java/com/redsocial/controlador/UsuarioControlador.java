@@ -1,10 +1,14 @@
 
-package com.redsocial.Controller;
+package com.redsocial.controlador;
 
 
 
-import com.redsocial.Servicio.UsuarioServicio;
+import com.redsocial.entidades.Rol;
+import com.redsocial.service.UsuarioService;
 import com.redsocial.entidades.Usuario;
+import com.redsocial.enumercion.TipoRol;
+import com.redsocial.repositorio.RolRepositorio;
+import java.util.Optional;
 import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,10 +22,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/usuarios")
-public class UsuarioController {
+public class UsuarioControlador {
     
      @Autowired
-    private UsuarioServicio usuarioServicio;
+    private UsuarioService usuarioServicio;
+     
+     @Autowired
+     private RolRepositorio rolRepositorio;
      
 
     @GetMapping("/formulario")
@@ -44,23 +51,26 @@ public class UsuarioController {
         return "redirect:/login";
     }
 
-    @PostMapping("/login")
-    public String login(@RequestParam String correo, @RequestParam String contrasena, Model model) {
- 
-        Usuario usuario = usuarioServicio.findByEmail(correo);
-        if (usuario != null && usuario.getContrasena().equals(contrasena)) {
-            return "redirect:/";
-        } else {
-            model.addAttribute("error", "Credenciales incorrectas");
-            return "login";
-        }
-    }
+ @PostMapping("/login")
+ public String login(@RequestParam String correo, @RequestParam String contrasena, Model model) {
+    Usuario usuario = usuarioServicio.findByEmail(correo);
+        Optional<Rol> rolComunOptional = rolRepositorio.findByTipoRol(TipoRol.COMUN);
+        Optional<Rol> rolDisenadorOptional = rolRepositorio.findByTipoRol(TipoRol.DISEÑADOR);
+    
+        if(usuario != null && usuario.getContrasena().equals(contrasena)) {
+           if (rolComunOptional.isPresent() && usuario.getRol().equals(rolComunOptional.get())) {
+               return "redirect:/usuarios/formulario";
+              } else if (rolDisenadorOptional.isPresent() && usuario.getRol().equals(rolDisenadorOptional.get())) {
+                  return "redirect:/buscador";
+               }
+           }
+                return "redirect:/...";
+}
+
     @GetMapping("/listar")
     public String listarUsuarios(Model model) {
         Set<Usuario> usuarios = usuarioServicio.listarUsuarios();
         model.addAttribute("usuarios", usuarios);
         return "listado";
     }
-
-
 }
