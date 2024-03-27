@@ -1,9 +1,10 @@
 
-package com.redsocial.Servicio;
-
-import com.redsocial.Repository.ComentarioRepositorio;
+package com.redsocial.Service;
 import com.redsocial.entidades.Comentario;
+import com.redsocial.entidades.Publicacion;
+import com.redsocial.repositorio.ComentarioRepositorio;
 import jakarta.transaction.Transactional;
+import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,21 +12,23 @@ import org.springframework.stereotype.Service;
 
 
 @Service
-public class ServicioComentario {
+public class ComentarioService {
     
     @Autowired
     ComentarioRepositorio comentarioRepositorio;
     
     @Transactional
-    public void registrarComentario(String id,String texto){
-        
-       Comentario comentario = new Comentario();
-       
-       comentario.;
-       comentario.setTexto(texto);
+    public void registrarComentario(Comentario comentario){
        
        comentarioRepositorio.save(comentario);
        
+    }
+    
+  public Comentario buscarPorId(String id) {
+        return comentarioRepositorio.findById(id).orElse(null);
+    }
+   public List<Comentario> obtenerComentariosPorPublicacion(Publicacion publicacion) {
+        return comentarioRepositorio.findByPublicacion(publicacion);
     }
     
     @Transactional
@@ -37,8 +40,8 @@ public class ServicioComentario {
            
             Comentario comentario = respuesta.get();
             
-            comentario.(texto);
-            comentario.setDarBaja(true);
+            comentario.setId(id);
+            comentario.setTexto(texto);
             
             comentarioRepositorio.save(comentario);
             
@@ -52,7 +55,7 @@ public class ServicioComentario {
        if(respuesta != null){
         Comentario comentario = respuesta.get();
         
-        comentario.setDarBaja(false);
+        comentario.setId(id);
         
         comentarioRepositorio.save(comentario);
        }

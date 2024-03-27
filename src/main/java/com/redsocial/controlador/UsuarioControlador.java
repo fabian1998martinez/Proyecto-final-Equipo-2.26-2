@@ -36,7 +36,7 @@ public class UsuarioControlador {
         model.addAttribute("nuevoUsuario", new Usuario());
        
         
-        return "Formulario";
+        return "crearUsuario";
     }
 
     @PostMapping("/crear")

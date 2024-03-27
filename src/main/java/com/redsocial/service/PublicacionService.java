@@ -19,6 +19,10 @@ public class PublicacionService {
     public Publicacion guardarPublicacion(Publicacion publicacion){
         return publicacionRepositorio.save(publicacion);
     }
+     public List<Publicacion> obtenerPublicacionesPorMeGusta() {
+        // Obtener las publicaciones ordenadas por la cantidad de "me gusta" de mayor a menor
+        return publicacionRepositorio.findAllByOrderByCantidadMeGustaDesc();
+    }
     
    
     public List<Publicacion> obtenerTodasPublicaciones() {
@@ -27,9 +31,11 @@ public class PublicacionService {
     
    
     public Publicacion buscarPublicacionPorId(String id) {
-        return publicacionRepositorio.findById(id).orElse(null);
+        
+        Publicacion respuesta = publicacionRepositorio.obtenerPorId(id);
+        
+        return respuesta; 
     }
-    
     public void eliminarPublicacionPorId(String id) {
         publicacionRepositorio.deleteById(id);
     }
