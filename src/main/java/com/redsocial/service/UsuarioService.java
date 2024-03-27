@@ -1,8 +1,8 @@
 
-package com.redsocial.Servicio;
+package com.redsocial.service;
 
-import com.redsocial.Repository.RolRepositorio;
-import com.redsocial.Repository.UsuarioRepositorio;
+import com.redsocial.repositorio.RolRepositorio;
+import com.redsocial.repositorio.UsuarioRepositorio;
 import com.redsocial.entidades.Rol;
 import com.redsocial.entidades.Usuario;
 import com.redsocial.enumercion.TipoRol;
@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service;
 
 
 @Service
-public class UsuarioServicio{
+public class UsuarioService{
     
     
     @Autowired

@@ -1,5 +1,5 @@
 
-package com.redsocial.Controller;
+package com.redsocial.controlador;
 
 import com.redsocial.entidades.Usuario;
 import org.springframework.stereotype.Controller;

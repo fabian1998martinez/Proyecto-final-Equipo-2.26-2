@@ -1,5 +1,5 @@
 
-package com.redsocial.Repository;
+package com.redsocial.repositorio;
 
 import com.redsocial.entidades.Rol;
 import com.redsocial.enumercion.TipoRol;
